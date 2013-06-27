@@ -323,7 +323,7 @@ a, span {
     overflow-y: auto;
     float: right;
 
-    background-image: url('/img/escheresque.png');
+    background-image: url('/img/fabric_plaid.png');
     border: 1px solid silver;
     position:relative;
 }

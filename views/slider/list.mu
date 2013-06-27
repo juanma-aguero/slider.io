@@ -55,7 +55,7 @@
                 {{/sliders}}
             </ul>
         </div>
-        <div class="span5 well">
+        <div class="span5 well" style="opacity:0.9;">
             <h2>New Slider</h2>
             <form action="/slider/new" method="post" class="new-slider">
                 <fieldset>
