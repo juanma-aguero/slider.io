@@ -18,7 +18,6 @@
 	<link href="/css/highlight/solarized_dark.min.css" rel="stylesheet">
 	<link href="/css/slider.css" rel="stylesheet">
 	
-	{{#editor}}
         <link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link href="/css/smoothness/jquery-ui-1.8.21.custom.css" rel="stylesheet">
@@ -26,12 +25,10 @@
 	<link href="/css/farbtastic/farbtastic.css" rel="stylesheet">
 	<link href="/css/select2/select2.css" rel="stylesheet">
 	<link href="/css/editor.css" rel="stylesheet">
-	{{/editor}}
 	
 	<link href="styles.css" rel="stylesheet">
   
 </head>
-{{#editor}}
 <body>
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
@@ -67,16 +64,6 @@
 		</div>
 		<div class="content"></div>
 	</div>
-{{/editor}}
-{{^editor}}
-<body class="sliderCtn">
-    <header>
-        <div id="clients-holder"></div>
-    </header>
-    <div id="slider-stage">
-        <ul id="slider-list"></ul>
-    </div>
-{{/editor}}
 
   <script src="/js/libs/jquery-1.7.2.min.js"></script>	
 	<script src="/js/libs/highlight.min.js"></script>
@@ -87,7 +74,6 @@
 	<script src="/js/sliderio/service/slider.js"></script>
 	<script src="/js/sliderio/view/partials.js"></script>
 	
-	{{#editor}}
 	<script type="text/javascript" src="/js/libs/jquery-ui-1.8.21.custom.min.js"></script>
 	<script type="text/javascript" src="/js/libs/farbtastic.js"></script>
 	<script type="text/javascript" src="/js/libs/select2.min.js"></script>
@@ -101,29 +87,12 @@
 	<script src="/js/sliderio/view/editor/config.js"></script>
 	
 	<script type="text/javascript" src="/js/editor.js"></script>
-	{{/editor}}
 	
 	{{#scripts}}
             <script type="text/javascript">
                 {{{scripts}}}
             </script>
 	{{/scripts}}
-	
-	{{^editor}}
-		{{#solo}}
-                    <script src="/js/solo.js"></script>
-                    <script src="/js/speaker.js"></script>
-		{{/solo}}
-		
-		{{^solo}}
-                    <script src="/socket.io/socket.io.js"></script>
-                    <script src="/js/listener.js"></script>
-                    {{#speaker}}
-                        <script src="/js/speaker.js"></script>
-                    {{/speaker}}
-		{{/solo}}
-	{{/editor}}
-	
 </body>
 </html>
 

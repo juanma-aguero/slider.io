@@ -3,3 +3,4 @@ node_modules
 sliders/cache/
 sliders/*.json
 public/slider/
+/nbproject/private/

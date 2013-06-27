@@ -1,72 +1,73 @@
 
 var socketIOReady = $.Deferred();
-var socket = io.connect(); 
+var socket = io.connect();
 
 socket.on('connect', function() {
-	socket.emit('joinSlider', sliderName);
+    socket.emit('joinSlider', sliderName);
 });
 
-function updateClients(current){
-	$('#clients-holder').text(current);
+function updateClients(current) {
+    $('#clients-holder').text(current);
 }
 
-socket.on('clientOnline', function (data) {
-  updateClients(data.current);
+socket.on('clientOnline', function(data) {
+    updateClients(data.current);
 });
 
-socket.on('clientOffline', function (data) {
-  updateClients(data.current);
+socket.on('clientOffline', function(data) {
+    updateClients(data.current);
 });
 
-socket.on('initSlider', function (data) {
-  updateClients(data.current);
-  socketIOReady.resolve(data);
+socket.on('initSlider', function(data) {
+    updateClients(data.current);
+    socketIOReady.resolve(data);
 });
 
-socket.on('moveSlider', function (data) {
-	if (Slider) {
-		Slider.moveTo(data.index);
-	}
+socket.on('moveSlider', function(data) {
+    if (Slider) {
+        Slider.moveTo(data.index);
+    }
 });
 
-socket.on('updatedItemList', function (data) {
-	if (Slider) {
-		Slider.updateList(data.itemIndex);
-	}
+socket.on('updatedItemList', function(data) {
+    if (Slider) {
+        Slider.updateList(data.itemIndex);
+    }
 });
 
-socket.on('toggleSlider', function (data) {
-  if (Slider) {
-  	Slider.toggle(data.visible);
-  }
+socket.on('toggleSlider', function(data) {
+    if (Slider) {
+        Slider.toggle(data.visible);
+    }
 });
 
-function initSlider(sliderInfo, jsonData){
-	Slider.init(jsonData, sliderInfo.index);
-	Slider.toggle(sliderInfo.visible);
-	Slider.updateList(sliderInfo.itemIndex);
+function initSlider(sliderInfo, jsonData) {
+    Slider.init(jsonData, sliderInfo.index);
+    Slider.toggle(sliderInfo.visible);
+    //Slider.toggle(true);
+    Slider.updateList(sliderInfo.itemIndex);
 }
 
-$(document).ready(function(){
-	hljs.tabReplace = '  ';
-	
-	var jsonReady = $.Deferred();
-	var templatesReady = $.Deferred();
-	var stylesReady = $.Deferred();
-	
-	$.when(socketIOReady, jsonReady, templatesReady, stylesReady).done(initSlider);
+$(document).ready(function() {
+    hljs.tabReplace = '  ';
 
-	sliderio.view.partials.importSlides(function(){
-		templatesReady.resolve();
-	});
-	
-	sliderio.view.partials.importStyles(function(){
-		stylesReady.resolve();
-	});
-	
-	sliderio.service.slider.getSlides(function(data){
-		jsonReady.resolve(data);
-	});
+    var jsonReady = $.Deferred();
+    var templatesReady = $.Deferred();
+    var stylesReady = $.Deferred();
+
+    $.when(socketIOReady, jsonReady, templatesReady, stylesReady).done(initSlider);
+
+    sliderio.view.partials.importSlides(function() {
+        templatesReady.resolve();
+    });
+
+    sliderio.view.partials.importStyles(function() {
+        stylesReady.resolve();
+    });
+
+    sliderio.service.slider.getSlides(function(data) {
+        jsonReady.resolve(data);
+    });
 });
 
 

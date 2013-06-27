@@ -1,228 +1,228 @@
 html { 
-	font-size: 16px;
-	font-size: 100%; 
-	-webkit-text-size-adjust: none; 
-	-moz-text-size-adjust: none; 
-	-ms-text-size-adjust: none;
+    font-size: 16px;
+    font-size: 100%; 
+    -webkit-text-size-adjust: none; 
+    -moz-text-size-adjust: none; 
+    -ms-text-size-adjust: none;
 }
 
 body { 
-	margin: 0; 
-	font-size: 1.4em; 
-	font-size: 1.4rem; 
-	line-height: 1.4; 
+    margin: 0; 
+    font-size: 1.4em; 
+    font-size: 1.4rem; 
+    line-height: 1.4; 
 }
 
 ::-moz-selection { 
-	background: #8CC84B; 
-	color: #fff; 
-	text-shadow: none; 
+    background: #8CC84B; 
+    color: #fff; 
+    text-shadow: none; 
 }
 
 ::selection { 
-	background: #8CC84B; 
-	color: #fff; 
-	text-shadow: none; 
+    background: #8CC84B; 
+    color: #fff; 
+    text-shadow: none; 
 }
 
 h1 {
-	font-size: 3em;
-	font-size: 3rem;
+    font-size: 3em;
+    font-size: 3rem;
 }
 
 h2 {
-	font-size: 2em;
-	font-size: 2rem;
+    font-size: 2em;
+    font-size: 2rem;
 }
 
 h1, h2, h3 {
-	text-align: center;
-	line-height: 1;
-	margin-bottom: 0;
-	margin-left: 10px;
-	margin-right: 10px;
-	font-weight: normal;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: normal;
 }
 
 .bg-popup-auth{
-	background-color: black;
-	opacity: 0.8;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 400;
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 400;
 }
 
 .popup-auth {
-	width: 200px;
-	height: 60px;
-	position: absolute;
-	top: 50px;
-	left: 50px;
-	padding: 20px;
-	border: solid 1px silver;
-	z-index: 401;
-	font-family: sans;
-	background-color: #FFF;
-	
-	-moz-border-radius: 10px;
-  -webkit-border-radius: 10px; 
-  border-radius: 10px; 
-  
-  -moz-box-shadow: 0px 0px 10px #000;
-	-webkit-box-shadow: 0px 0px 10px #000;
-	box-shadow: 0px 0px 10px #000;
-	
-	font-size: 0.8em;
-	font-size: 0.8rem;
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    padding: 20px;
+    border: solid 1px silver;
+    z-index: 401;
+    font-family: sans;
+    background-color: #FFF;
+
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px; 
+    border-radius: 10px; 
+
+    -moz-box-shadow: 0px 0px 10px #000;
+    -webkit-box-shadow: 0px 0px 10px #000;
+    box-shadow: 0px 0px 10px #000;
+
+    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 .popup-auth label {
-	display: inline-block;
-	width: 80px;
+    display: inline-block;
+    width: 80px;
 }
 
 .popup-auth input[type=password]{
-	display: inline-block;
-	width: 100px;
-	border: solid 1px silver;
+    display: inline-block;
+    width: 100px;
+    border: solid 1px silver;
 }
 
 .popup-auth input[type=button]{
-	display: block;
-	margin: 10px;
-	float:right;
-	width: 80px;
+    display: block;
+    margin: 10px;
+    float:right;
+    width: 80px;
 }
 
 #clients-holder{
-	position: fixed;
-	width: 40px;
-	height: 25px;
-	right: 0px;
-	top: 0px;
-	z-index: 1000;
-	
-	color: black;
-	text-align: center;
-	background-color: rgba(255,255,255,0.9);
-	
-	-moz-border-radius: 0 0 0 10px; /* Firefox */
-  -webkit-border-radius: 0 0 0 10px; /* Safari, Chrome */
-  border-radius: 0 0 0 10px; /* CSS3 */
- 
- 	display: none;
+    position: fixed;
+    width: 40px;
+    height: 25px;
+    right: 0px;
+    top: 0px;
+    z-index: 1000;
+
+    color: black;
+    text-align: center;
+    background-color: rgba(255,255,255,0.9);
+
+    -moz-border-radius: 0 0 0 10px; /* Firefox */
+    -webkit-border-radius: 0 0 0 10px; /* Safari, Chrome */
+    border-radius: 0 0 0 10px; /* CSS3 */
+
+    display: none;
 }
 
 #slider-stage{
-	overflow:auto;
-	overflow-x:hidden;
-	overflow-y:hidden;
-	margin:0 auto;
+    overflow:auto;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    margin:0 auto;
 }
 
 #slider-list{
-	border:0;
-	margin:0;
-	padding:0;
-	display:none;
+    border:0;
+    margin:0;
+    padding:0;
+    display:none;
 }
 
 #slider-list>li {
-	list-style:none;
-	margin:0;
-	padding:0;
-	border:0;
-	float:left;
-	opacity: 0.4;
-	display:none;
-	position: relative;
+    list-style:none;
+    margin:0;
+    padding:0;
+    border:0;
+    float:left;
+    opacity: 0.4;
+    display:none;
+    position: relative;
 }
 
 #slider-list>li.current {
-	opacity: 1;
+    opacity: 1;
 }
-	
+
 #slider-list>li aside,
 #slider-list>li details {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	left: 0px;
-	bottom: 0px;
-	z-index: 1100;
-	background-color: rgba(255,255,255,0.9);
-	font-size: 2em;
-	font-size: 2rem;
-	
-	display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1100;
+    background-color: rgba(255,255,255,0.9);
+    font-size: 2em;
+    font-size: 2rem;
+
+    display: none;
 }
 
 #slider-list>li aside p,
 #slider-list>li details p {
-	margin: 5px;
+    margin: 5px;
 }
 
 #slider-list>li pre code {
-	width: 96%;
-	margin: 1%;
-	padding: 1%;
-	
-	border-radius: 10px;
-	
-	font-size: 2em;
-	font-size: 2rem;
-	
-	-moz-border-radius: 10px; /* Firefox */
-  -webkit-border-radius: 10px; /* Safari, Chrome */
-  border-radius: 10px; /* CSS3 */
+    width: 96%;
+    margin: 1%;
+    padding: 1%;
+
+    border-radius: 10px;
+
+    font-size: 2em;
+    font-size: 2rem;
+
+    -moz-border-radius: 10px; /* Firefox */
+    -webkit-border-radius: 10px; /* Safari, Chrome */
+    border-radius: 10px; /* CSS3 */
 }
 
 img {
-	-moz-border-radius: 10px; /* Firefox */
-  -webkit-border-radius: 10px; /* Safari, Chrome */
-  border-radius: 10px; /* CSS3 */
+    -moz-border-radius: 10px; /* Firefox */
+    -webkit-border-radius: 10px; /* Safari, Chrome */
+    border-radius: 10px; /* CSS3 */
 }
 
 .lazy {
-	display: none;
+    display: none;
 }
 
 img.title {
-	width: 50px;
-	height: 50px;
-	margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
 }
 
 img.small {
-	width:50%; 
-	margin: 5% 25% 0 25%;
+    width:50%; 
+    margin: 5% 25% 0 25%;
 }
 
 img.normal {
-	width:80%; 
-	margin: 5% 10% 0 10%;
+    width:80%; 
+    margin: 5% 10% 0 10%;
 }
 
 img.big {
-	width:90%; 
-	margin: 10% 5% 0 5%;
+    width:90%; 
+    margin: 10% 5% 0 5%;
 }
 
 ul.bulletList {
-	display: inline-block;
-	list-style: circle;
-	width: 90%;
-	margin: 0;
+    display: inline-block;
+    list-style: circle;
+    width: 90%;
+    margin: 0;
 }
 
 ul.bulletList li {
-	margin: 5% 3%;
-	width: 100%;
-	
-	font-size: 2em;
-	font-size: 2rem;
-	
-	display: none;
+    margin: 5% 3%;
+    width: 100%;
+
+    font-size: 2em;
+    font-size: 2rem;
+
+    display: none;
 }
