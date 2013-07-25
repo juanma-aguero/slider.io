@@ -1,6 +1,3 @@
 node_modules
 .project
-sliders/cache/
-sliders/*.json
-public/slider/
 /nbproject/private/
