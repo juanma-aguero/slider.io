@@ -34,7 +34,7 @@ app.configure('production', function(){
 router.configure(app);
 realtime.start(app);
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3500, function(){
   console.log("Webenter server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
 

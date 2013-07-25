@@ -16,6 +16,8 @@
   <meta name="viewport" content="width=device-width">
 
 	<link href="/css/highlight/solarized_dark.min.css" rel="stylesheet">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/chatbox.css" rel="stylesheet">
 	<link href="/css/slider.css" rel="stylesheet">
 	<link href="styles.css" rel="stylesheet">
   
@@ -27,6 +29,20 @@
     </header>
     <div id="slider-stage">
         <ul id="slider-list"></ul>
+    </div>
+</div>
+<div id="chatbox">
+    <div id="chatheader">
+        <span>Chatroom</span>
+        <i class="icon-comment" id="newmsg"></i>
+        <a class="link pull-right"><i class="icon-minus icon-white"></i></a>
+    </div>
+    <div id="chatroom"></div>
+    <div id="tell-me-username">
+        <input id="username" type="text" placeholder="Who are you?">
+        <button id="setusername" class="btn btn-success">Ready</button></div>
+    <div id="controls">
+        <textarea id="chatmsg"></textarea>
     </div>
 </div>	
   <script src="/js/libs/jquery-1.7.2.min.js"></script>	

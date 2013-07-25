@@ -2,6 +2,10 @@
 var socketIOReady = $.Deferred();
 var socket = io.connect();
 
+var messages = [];
+var chatroom;
+var username = "";
+
 socket.on('connect', function() {
     socket.emit('joinSlider', sliderName);
 });
@@ -41,12 +45,52 @@ socket.on('toggleSlider', function(data) {
     }
 });
 
+socket.on('message', function(data) {
+    if (data.message) {
+        messages.push(data);
+        updateRoom();
+        if (!$("#chatbox").hasClass("active")) {
+            $("#newmsg").addClass("icon-white");
+        }
+    } else {
+        console.log("There is a problem:", data);
+    }
+});
+
+function sendMsg(text) {
+    if (socket) {
+        var data = {message: text, username: username};
+        socket.emit('send', data);
+        data.username = "me";
+        messages.push(data);
+        updateRoom();
+    }
+}
+function chat() {
+    var msg = $("#chatmsg").val();
+    if (msg.length > 0) {
+        sendMsg(msg);
+        $("#chatmsg").val("");
+    }
+}
+
+function updateRoom() {
+    var html = '';
+    for (var i = 0; i < messages.length; i++) {
+        html += '<b>' + (messages[i].username ? messages[i].username : 'Webenter') + ': </b>';
+        html += messages[i].message + '<br />';
+    }
+    chatroom.innerHTML = html;
+}
+
 function initSlider(sliderInfo, jsonData) {
     Slider.init(jsonData, sliderInfo.index);
     Slider.toggle(sliderInfo.visible);
     //Slider.toggle(true);
     Slider.updateList(sliderInfo.itemIndex);
 }
+
+
 
 $(document).ready(function() {
     hljs.tabReplace = '  ';
@@ -68,6 +112,35 @@ $(document).ready(function() {
     sliderio.service.slider.getSlides(function(data) {
         jsonReady.resolve(data);
     });
+    chatroom = document.getElementById("chatroom");
+    $('#chatmsg-send').bind('click', function() {
+        chat();
+    });
+    $("#chatmsg").keyup(function(e) {
+        if (e.keyCode === 13) {
+            chat();
+        }
+    });
+    $('#chatheader > a').bind('click', function() {
+        if ($("#chatbox").hasClass("active")) {
+            $("#chatbox").removeClass("active");
+        } else {
+            if (username.length === 0) {
+
+            }
+            $("#chatbox").addClass("active");
+            $("#newmsg").removeClass("icon-white");
+        }
+    });
+    $('#setusername').bind('click', function() {
+        var newUser = $("#username").val();
+        if (newUser.length > 0) {
+            username = newUser;
+        }
+        $("#tell-me-username").fadeOut('fast');
+        $("#chatbox #controls, #chatbox #chatroom").show();
+    });
+
 });
 
 

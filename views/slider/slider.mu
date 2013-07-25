@@ -17,6 +17,11 @@
 
 	<link href="/css/highlight/solarized_dark.min.css" rel="stylesheet">
 	<link href="/css/slider.css" rel="stylesheet">
+
+        {{^editor}}
+	<link href="/css/chatbox.css" rel="stylesheet">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        {{/editor}}
 	
 	{{#editor}}
         <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -121,6 +126,23 @@
                     {{#speaker}}
                         <script src="/js/speaker.js"></script>
                     {{/speaker}}
+                    
+                    <div id="chatbox">
+                        <div id="chatheader">
+                            <span>Chatroom</span>
+                            <i class="icon-comment" id="newmsg"></i>
+                            <a class="link pull-right"><i class="icon-minus icon-white"></i></a>
+                        </div>
+                        <div id="chatroom"></div>
+                        <div id="tell-me-username">
+                            <input id="username" type="text" placeholder="Who are you?">
+                            <button id="setusername" class="btn">Ready</button></div>
+                        <div id="controls">
+                            <textarea id="chatmsg"></textarea>
+                            <button id="chatmsg-send" class="btn">Send</button>
+                        </div>
+                    </div>
+
 		{{/solo}}
 	{{/editor}}
 	
