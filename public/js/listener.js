@@ -81,6 +81,7 @@ function updateRoom() {
         html += messages[i].message + '<br />';
     }
     chatroom.innerHTML = html;
+    chatroom.scrollTop = chatroom.scrollHeight;  
 }
 
 function initSlider(sliderInfo, jsonData) {
@@ -121,6 +122,8 @@ $(document).ready(function() {
             chat();
         }
     });
+    
+    
     $('#chatheader > a').bind('click', function() {
         if ($("#chatbox").hasClass("active")) {
             $("#chatbox").removeClass("active");

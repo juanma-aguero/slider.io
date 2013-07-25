@@ -42,9 +42,6 @@ $(document).ready(function() {
     $("body").bind('keyup', function(e) {
 
         switch (e.keyCode || e.which) {
-            case 83: //s
-                go.toggle();
-                break;
             case 37: //left
                 go.left();
                 break;
@@ -67,6 +64,14 @@ $(document).ready(function() {
     })
             .bind("swipeDown", function() {
         go.toggleDetails(false);
+    });
+
+
+    $("body").keydown(function(e) {
+        if (e.keyCode === 83 && e.ctrlKey) {
+            go.toggle();
+            return false;
+        }
     });
 
     if (socket) {
