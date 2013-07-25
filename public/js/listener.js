@@ -61,7 +61,6 @@ function sendMsg(text) {
     if (socket) {
         var data = {message: text, username: username};
         socket.emit('send', data);
-        data.username = "me";
         messages.push(data);
         updateRoom();
     }
